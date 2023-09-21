@@ -33,7 +33,6 @@ if __name__ == "__main__":
     warnings.filterwarnings("ignore")
     np.random.seed(40)
 
-
     data = pd.read_csv("winequality.csv")
     
     # Split the data into training and test sets. (0.75, 0.25) split.
@@ -79,7 +78,7 @@ if __name__ == "__main__":
             # please refer to the doc for more information:
             # https://mlflow.org/docs/latest/model-registry.html#api-workflow
             mlflow.sklearn.log_model(
-                lr, "model", registered_model_name="ElasticnetWineModel", signature=signature
+                lr, "model", registered_model_name="ElasticnetWineModel", signature=signature 
             )
         else:
             mlflow.sklearn.log_model(lr, "model", signature=signature)
